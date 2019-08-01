@@ -1,7 +1,13 @@
 #!/usr/bin/python
-import sys
-import requests
-import textwrap
+try:
+    import sys
+    import requests
+    import textwrap
+except ImportError:
+    print "Required python modules: sys, requests, textwrap"
+    print "Please make sure that all above mentioned modules"
+    print " are installed for your python. Hint: use pip"
+    raise
 
 ussd_api = 'https://api.wow-q.com/api/ussd/v3.gateway.php'
 post_params = {'sessionid': 'wbe48930', 'dialstring': '*120*8800*5100#', 'request': '*120*8800*5100#'}
